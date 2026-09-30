@@ -4,11 +4,11 @@
 # polls departures, filters by direction, and publishes the next few
 # trains to shared state. The bar widget renders the soonest one.
 
-id = "emil/ostgotapendeln_next_train"
+id = "dunderrrrrr/ostgotapendeln_next_train"
 name = "Ostgotapendeln Next Train"
 version = "1.0.0"
 plugin_api = 19
-author = "emil"
+author = "dunderrrrrr"
 license = "MIT"
 dependencies = []
 tags = ["transit", "train", "sweden", "trafiklab"]

@@ -1,8 +1,10 @@
 # Ostgotapendeln Next Train
 
-Noctalia plugin (`emil/ostgotapendeln_next_train`) showing the next train
+Noctalia plugin (`dunderrrrrr/ostgotapendeln_next_train`) showing the next train
 departure between two configurable stops on Ostgotapendeln, using the
 [Trafiklab Realtime APIs](https://www.trafiklab.se/api/our-apis/trafiklab-realtime-apis/).
+
+![Bar widget showing the next train departure](https://i.imgur.com/1z49QfI.png)
 
 ## Install
 
@@ -41,11 +43,23 @@ place; swap it in and rebuild. Since the store path is read-only, `.luau`
 hot-reload won't pick up local edits — rebuild `home-manager switch` to
 apply plugin updates instead.
 
+Installing the files isn't enough on its own — you also need to add the
+widget to a bar section in `programs.noctalia.settings.bar.main`:
+
+```nix
+bar.main.start = [
+  # ...your other widgets...
+  "dunderrrrrr/ostgotapendeln_next_train:bar"
+];
+```
+
+(`start`, `center`, or `end`, whichever section you want it in.)
+
 ## Setup
 
 1. Get a free API key at [trafiklab.se](https://www.trafiklab.se/api/our-apis/trafiklab-realtime-apis/)
    (create a project, add "Trafiklab Realtime APIs").
-2. Add the `bar` widget (`emil/ostgotapendeln_next_train:bar`) from the
+2. Add the `bar` widget (`dunderrrrrr/ostgotapendeln_next_train:bar`) from the
    Add-widget picker.
 3. Paste the API key into the widget's **Trafiklab API key** setting.
 4. Set **Origin stop name** / **Destination stop name** to any two stops on
@@ -81,5 +95,5 @@ turn off **Show countdown** to show just the icon.
 ## IPC
 
 ```sh
-noctalia msg plugin emil/ostgotapendeln_next_train:service all refresh
+noctalia msg plugin dunderrrrrr/ostgotapendeln_next_train:service all refresh
 ```
