@@ -1,0 +1,41 @@
+{
+  "title": "Next Train",
+  "canceled": "canceled",
+  "bar": {
+    "no_key": "No API key",
+    "resolving": "...",
+    "error": "Error",
+    "none": "No trains",
+    "canceled": "Canceled",
+    "refreshing": "Refreshing...",
+    "next": "(next {time})"
+  },
+  "tooltip": {
+    "no_key": "Set a Trafiklab API key in the widget settings.",
+    "resolving": "Looking up stops...",
+    "error": "Trafiklab error: {message}",
+    "no_departures": "No upcoming departures from {origin}."
+  },
+  "settings": {
+    "show_countdown": {
+      "label": "Show countdown",
+      "description": "Show minutes until the next train in the bar (otherwise just the train icon)."
+    },
+    "api_key": {
+      "label": "Trafiklab API key",
+      "description": "API key for a Trafiklab Realtime APIs (Timetables) project. Get one free at trafiklab.se."
+    },
+    "origin_name": {
+      "label": "Origin stop name",
+      "description": "Name of the stop to show departures from, e.g. \"Linkoping C\"."
+    },
+    "destination_name": {
+      "label": "Destination stop name",
+      "description": "Name of the destination stop, e.g. \"Kimstad\". Shown for reference; set the origin to the stop you're actually leaving from."
+    },
+    "poll_seconds": {
+      "label": "Refresh interval (seconds)",
+      "description": "How often to poll Trafiklab for updated departures."
+    }
+  }
+}

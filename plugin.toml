@@ -1,0 +1,65 @@
+# Ostgotapendeln Next Train shows the next train departure between two
+# configurable stops using the Trafiklab Realtime Timetables API. A
+# headless service resolves stop ids by name (Trafiklab Stop Lookup),
+# polls departures, filters by direction, and publishes the next few
+# trains to shared state. The bar widget renders the soonest one.
+
+id = "emil/ostgotapendeln_next_train"
+name = "Ostgotapendeln Next Train"
+version = "1.0.0"
+plugin_api = 19
+author = "emil"
+license = "MIT"
+dependencies = []
+tags = ["transit", "train", "sweden", "trafiklab"]
+icon = "train"
+description = "Shows the next train between two configurable stops via the Trafiklab realtime API."
+
+# Plugin-level settings: shared across all entries (service.luau and
+# bar.luau both read these via noctalia.getConfig). Entry-level
+# [[*.setting]] blocks are only supported for widget/desktop_widget/panel
+# entries, not service entries, so these live here instead.
+[[setting]]
+key = "api_key"
+type = "string"
+label_key = "settings.api_key.label"
+description_key = "settings.api_key.description"
+default = ""
+
+[[setting]]
+key = "origin_name"
+type = "string"
+label_key = "settings.origin_name.label"
+description_key = "settings.origin_name.description"
+default = ""
+
+[[setting]]
+key = "destination_name"
+type = "string"
+label_key = "settings.destination_name.label"
+description_key = "settings.destination_name.description"
+default = ""
+
+[[setting]]
+key = "poll_seconds"
+type = "int"
+label_key = "settings.poll_seconds.label"
+description_key = "settings.poll_seconds.description"
+default = 30
+min = 15
+max = 300
+
+[[widget]]
+id = "bar"
+entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "show_countdown"
+  type = "bool"
+  label_key = "settings.show_countdown.label"
+  description_key = "settings.show_countdown.description"
+  default = true
+
+[[service]]
+id = "service"
+entry = "service.luau"
