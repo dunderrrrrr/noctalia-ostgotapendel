@@ -77,10 +77,11 @@ destination stop (also cached).
 
 ## Bar widget
 
-Shows a train glyph and minutes until the next confirmed departure (e.g.
-`12 min`, or `now`). Hover for a tooltip with the next few departures
-(time, platform, line, delay, destination). Click to force a refresh, or
-turn off **Show countdown** to show just the icon.
+Shows a train glyph and the next confirmed departure's actual (realtime)
+clock time, e.g. `16:42`, with a `(+5)` suffix if it's delayed, and the
+following departure's time in parentheses. Hover for a tooltip with the
+next few departures (time, platform, line, delay, destination). Click to
+force a refresh, or turn off **Show countdown** to show just the icon.
 
 ## Settings
 

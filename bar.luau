@@ -67,6 +67,9 @@ local function render()
       barWidget.setText(noctalia.tr("bar.canceled"))
     else
       local time = clockTime(nextTrain) or "?"
+      if (nextTrain.delay_minutes or 0) > 0 then
+        time = `{time} (+{nextTrain.delay_minutes})`
+      end
       local nextTime = clockTime(upcoming[2])
       if nextTime ~= nil then
         barWidget.setText(`{time} {noctalia.tr("bar.next", { time = nextTime })}`)
